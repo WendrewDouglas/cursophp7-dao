@@ -37,9 +37,8 @@ class Usuario {
 
     public function loadById($id){
         $sql = new Sql();
-        $result = $sql->select("SELECT * FROM tb_usuarios WHERE idusuario = :ID", array(":ID"=>$id));
+        $result = $sql->select("SELECT * FROM tb_usuarios WHERE idusuario = :ID", array(":ID"=> $id));
         if(count($result) > 0) {
-            $row = $result[0];
             $this->setData($result[0]);
         }
     }
@@ -92,14 +91,14 @@ class Usuario {
         }
     }
 
-    public function update($login, $password){
+    public function upDate($login, $password){
         $this->setDeslogin($login);
         $this->setDessenha($password);
         $sql = new Sql();
-        <sql->query("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE idusuario = :ID", array(
-            ":LOGIN"=>$this->getDeslogin(),
-            ":PASSWORD"=>$this->getDessenha();
-            ":ID"=>$this->getIdusuario();
+        $sql->query("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE idusuario = :ID", array(
+            ':LOGIN'=>$this->getDeslogin(),
+            ':PASSWORD'=>$this->getDessenha(),
+            ':ID'=>$this->getIdusuario()
         ));
     }
 
