@@ -21,9 +21,18 @@ require_once("config.php");
 //echo json_encode($search)
 
 //Listar usuario com login e senha validado
-$usuario = new Usuario();
-$usuario->login("Doug", "2468");
-echo $usuario;
+//$usuario = new Usuario();
+//$usuario->login("Doug", "2468");
+//echo $usuario;
+
+//Inserindo usuario novo
+$aluno = new Usuario("aluno", "@alun0");
+//Com a criação de um metodo construtor para atribuir os valores de setDeslogin e setDessenha, pode passar os valores direto pelo instanciamento.
+//$aluno->setDeslogin("aluno");
+//$aluno->setDessenha("@lun0");
+$aluno->insert();
+echo $aluno;
+
 
 
 ?>
